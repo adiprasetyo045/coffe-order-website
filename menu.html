@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Menu lengkap kopi kami dengan berbagai pilihan - PrassCofee">
+    <meta name="keywords" content="menu kopi, harga kopi, espresso, latte, manual brew">
+    <title>PrassCofee - Menu | Pilih Kopi Favorit Anda</title>
+    
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo/logo.png" alt="PrassCofee Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
+                        <span class="logo-text">PrassCofee</span>
+                    </a>
+                </div>
+
+                <!-- Menu Navigation -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="cart.html">Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+
+                <!-- Hamburger Menu (Mobile) -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MENU HEADER -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Menu Kopi Kami</h1>
+            <p>Pilih kopi favorit Anda dan nikmati kelezatannya</p>
+        </div>
+    </section>
+
+    <!-- MENU CONTENT -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-container">
+                <!-- SIDEBAR FILTER -->
+                <aside class="menu-sidebar">
+                    <div class="filter-section">
+                        <h3>Filter Menu</h3>
+
+                        <!-- Search Bar -->
+                        <div class="search-box">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                placeholder="Cari kopi..."
+                                class="search-input"
+                                aria-label="Search coffee"
+                            >
+                            <button class="search-btn" id="searchBtn" aria-label="Search">
+                                🔍
+                            </button>
+                        </div>
+
+                        <!-- Filter by Type -->
+                        <div class="filter-group">
+                            <h4>Jenis Kopi</h4>
+                            <label class="filter-option">
+                                <input type="radio" name="type" value="all" checked>
+                                <span>Semua</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="type" value="hot">
+                                <span>Hot 🔥</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="type" value="ice">
+                                <span>Ice ❄️</span>
+                            </label>
+                        </div>
+
+                        <!-- Filter by Category -->
+                        <div class="filter-group">
+                            <h4>Kategori</h4>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="all" checked>
+                                <span>Semua</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="espresso">
+                                <span>Espresso</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="latte">
+                                <span>Latte</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="manual-brew">
+                                <span>Manual Brew</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="category" value="signature">
+                                <span>Signature</span>
+                            </label>
+                        </div>
+
+                        <!-- Sort Options -->
+                        <div class="filter-group">
+                            <h4>Urutkan</h4>
+                            <select id="sortSelect" class="sort-select" aria-label="Sort products">
+                                <option value="default">Default</option>
+                                <option value="price-low">Harga: Rendah ke Tinggi</option>
+                                <option value="price-high">Harga: Tinggi ke Rendah</option>
+                                <option value="name-asc">Nama: A-Z</option>
+                                <option value="name-desc">Nama: Z-A</option>
+                            </select>
+                        </div>
+
+                        <!-- Reset Button -->
+                        <button class="btn btn-secondary btn-block" id="resetBtn">
+                            🔄 Reset Filter
+                        </button>
+                    </div>
+                </aside>
+
+                <!-- PRODUCTS GRID -->
+                <div class="menu-main">
+                    <!-- Results Info -->
+                    <div class="results-info">
+                        <p id="resultsCount">Menampilkan <strong>0</strong> produk</p>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded by JavaScript -->
+                        <div style="text-align: center; padding: 40px; grid-column: 1/-1;">
+                            <p>Loading products...</p>
+                        </div>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <h3>😕 Tidak ada produk ditemukan</h3>
+                        <p>Coba ubah filter atau kata kunci pencarian Anda</p>
+                        <button class="btn btn-primary" onclick="document.getElementById('resetBtn').click()">
+                            Reset Filter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PrassCofee</h3>
+                    <p>Menyajikan kopi berkualitas untuk hari yang lebih baik</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: prasetyaadhi398@gmail.com</p>
+                    <p>Phone: +62 852-3464-1311</p>
+                    <p>Location: Purbalingga, Central Java</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrassCofee. All rights reserved. | Portfolio Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Item ditambahkan ke keranjang!</span>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

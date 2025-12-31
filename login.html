@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login ke akun PrassCofee Anda">
+    <meta name="robots" content="noindex, nofollow">
+    <title>PrassCofee - Login | Masuk ke Akun Anda</title>
+    
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-page">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo/logo.png" alt="PrassCofee Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
+                        <span class="logo-text">PrassCofee</span>
+                    </a>
+                </div>
+
+                <!-- Menu Navigation -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="cart.html">Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+
+                <!-- Hamburger Menu (Mobile) -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN SECTION -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <!-- Auth Card -->
+                <div class="auth-card">
+                    <!-- Coffee Icon -->
+                    <div class="auth-icon">☕</div>
+                    
+                    <h1 class="auth-title">Selamat Datang Kembali!</h1>
+                    <p class="auth-subtitle">Login untuk melanjutkan pesanan Anda di PrassCofee</p>
+
+                    <!-- Login Form -->
+                    <form id="loginForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="contoh@email.com"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <div class="password-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password"
+                                    placeholder="Masukkan password"
+                                    required
+                                    autocomplete="current-password"
+                                    minlength="8"
+                                >
+                                <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">
+                                    👁️
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <span>Ingat Saya</span>
+                            </label>
+                            <a href="#" class="forgot-password" onclick="alert('Fitur reset password coming soon!'); return false;">Lupa Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            🔐 Login
+                        </button>
+
+                        <!-- Demo Accounts Info -->
+                        <div class="demo-info">
+                            <p><strong>🎭 Demo Akun untuk Testing:</strong></p>
+                            <p>📧 Email: <code>demo@coffee.com</code></p>
+                            <p>🔑 Password: <code>demo123</code></p>
+                            <small style="color: #666; font-size: 0.85rem;">
+                                *Gunakan akun demo untuk mencoba fitur login
+                            </small>
+                        </div>
+                    </form>
+
+                    <!-- Register Link -->
+                    <div class="auth-footer">
+                        <p>Belum punya akun? <a href="register.html">Daftar Sekarang</a></p>
+                    </div>
+                </div>
+
+                <!-- Side Image -->
+                <div class="auth-image">
+                    <div class="auth-image-content">
+                        <h2>Nikmati Kopi Terbaik</h2>
+                        <p>Bergabunglah dengan ribuan pecinta kopi lainnya di PrassCofee</p>
+                        <div class="coffee-animation">☕</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Notification message</span>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

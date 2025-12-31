@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daftar akun PrassCofee baru">
+    <meta name="robots" content="noindex, nofollow">
+    <title>PrassCofee - Register | Buat Akun Baru</title>
+    
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-page">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo/logo.png" alt="PrassCofee Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
+                        <span class="logo-text">PrassCofee</span>
+                    </a>
+                </div>
+
+                <!-- Menu Navigation -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="cart.html">Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+
+                <!-- Hamburger Menu (Mobile) -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- REGISTER SECTION -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <!-- Auth Card -->
+                <div class="auth-card">
+                    <!-- Coffee Icon -->
+                    <div class="auth-icon">☕</div>
+                    
+                    <h1 class="auth-title">Buat Akun Baru</h1>
+                    <p class="auth-subtitle">Bergabunglah dengan komunitas pecinta kopi PrassCofee</p>
+
+                    <!-- Register Form -->
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="fullName">Nama Lengkap *</label>
+                            <input 
+                                type="text" 
+                                id="fullName" 
+                                name="fullName"
+                                placeholder="Nama lengkap Anda"
+                                required
+                                autocomplete="name"
+                                minlength="3"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email"
+                                placeholder="contoh@email.com"
+                                required
+                                autocomplete="email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">No. Telepon *</label>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                name="phone"
+                                placeholder="08xxxxxxxxxx"
+                                required
+                                autocomplete="tel"
+                                pattern="[0-9]{10,13}"
+                            >
+                            <small class="form-hint">Format: 08xxxxxxxxxx (10-13 digit)</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password *</label>
+                            <div class="password-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password"
+                                    placeholder="Min. 8 karakter"
+                                    required
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                >
+                                <button type="button" class="toggle-password" id="togglePassword" aria-label="Toggle password visibility">
+                                    👁️
+                                </button>
+                            </div>
+                            <small class="form-hint">Password minimal 8 karakter</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Konfirmasi Password *</label>
+                            <div class="password-wrapper">
+                                <input 
+                                    type="password" 
+                                    id="confirmPassword" 
+                                    name="confirmPassword"
+                                    placeholder="Ulangi password"
+                                    required
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                >
+                                <button type="button" class="toggle-password" id="toggleConfirmPassword" aria-label="Toggle confirm password visibility">
+                                    👁️
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-wrapper">
+                                <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                <span>Saya setuju dengan <a href="#" onclick="alert('Syarat & Ketentuan:\n\n1. Gunakan data yang valid\n2. Jaga keamanan akun Anda\n3. Tidak menyalahgunakan layanan\n\nIni adalah demo project untuk portfolio.'); return false;" target="_blank">Syarat & Ketentuan</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            ✅ Daftar Sekarang
+                        </button>
+
+                        <!-- Info -->
+                        <div style="margin-top: 15px; padding: 12px; background: #FFF3CD; border-radius: 8px; font-size: 0.9rem;">
+                            <strong>ℹ️ Info:</strong> Data akan disimpan di LocalStorage browser Anda (demo mode)
+                        </div>
+                    </form>
+
+                    <!-- Login Link -->
+                    <div class="auth-footer">
+                        <p>Sudah punya akun? <a href="login.html">Login di sini</a></p>
+                    </div>
+                </div>
+
+                <!-- Side Image -->
+                <div class="auth-image">
+                    <div class="auth-image-content">
+                        <h2>Mulai Perjalanan Kopi Anda</h2>
+                        <p>Dapatkan pengalaman terbaik memesan kopi premium online</p>
+                        <div class="coffee-animation">☕</div>
+                        <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.9;">
+                            <p>✨ Proses registrasi mudah dan cepat</p>
+                            <p>🎁 Promo khusus member baru</p>
+                            <p>🚀 Akses ke semua menu premium</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Notification message</span>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

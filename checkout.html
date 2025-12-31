@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout pesanan Anda - PrassCofee">
+    <meta name="robots" content="noindex, nofollow">
+    <title>PrassCofee - Checkout | Selesaikan Pesanan</title>
+    
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo/logo.png" alt="PrassCofee Logo" style="height: 40px; margin-right: 10px; vertical-align: middle;">
+                        <span class="logo-text">PrassCofee</span>
+                    </a>
+                </div>
+
+                <!-- Menu Navigation -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="cart.html">Cart <span class="cart-count" id="cartCount">0</span></a></li>
+                </ul>
+
+                <!-- Hamburger Menu (Mobile) -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CHECKOUT HEADER -->
+    <section class="checkout-header">
+        <div class="container">
+            <h1>✅ Checkout</h1>
+            <p>Lengkapi data untuk menyelesaikan pesanan</p>
+        </div>
+    </section>
+
+    <!-- CHECKOUT CONTENT -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-container">
+                <!-- CHECKOUT FORM -->
+                <div class="checkout-main">
+                    <form id="checkoutForm" class="checkout-form">
+                        <!-- Personal Information -->
+                        <div class="form-section">
+                            <h3>📋 Informasi Pribadi</h3>
+
+                            <div class="form-group">
+                                <label for="fullName">Nama Lengkap *</label>
+                                <input 
+                                    type="text" 
+                                    id="fullName" 
+                                    name="fullName"
+                                    placeholder="Masukkan nama lengkap"
+                                    required
+                                    autocomplete="name"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email"
+                                    placeholder="contoh@email.com"
+                                    required
+                                    autocomplete="email"
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">No. Telepon *</label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone"
+                                    placeholder="08xxxxxxxxxx"
+                                    required
+                                    autocomplete="tel"
+                                    pattern="[0-9]{10,13}"
+                                >
+                                <small style="color: #666;">Format: 08xxxxxxxxxx</small>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Address -->
+                        <div class="form-section">
+                            <h3>📍 Alamat Pengiriman</h3>
+
+                            <div class="form-group">
+                                <label for="address">Alamat Lengkap *</label>
+                                <textarea 
+                                    id="address" 
+                                    name="address"
+                                    rows="3"
+                                    placeholder="Jl. Nama Jalan No. XX, RT/RW, Kelurahan..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Kota *</label>
+                                    <input 
+                                        type="text" 
+                                        id="city" 
+                                        name="city"
+                                        placeholder="Nama kota"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="postalCode">Kode Pos *</label>
+                                    <input 
+                                        type="text" 
+                                        id="postalCode" 
+                                        name="postalCode"
+                                        placeholder="12345"
+                                        required
+                                        pattern="[0-9]{5}"
+                                        maxlength="5"
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <h3>💳 Metode Pembayaran</h3>
+
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="transfer" checked>
+                                    <div class="payment-card">
+                                        <span class="payment-icon">🏦</span>
+                                        <span class="payment-text">Transfer Bank</span>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="ewallet">
+                                    <div class="payment-card">
+                                        <span class="payment-icon">📱</span>
+                                        <span class="payment-text">E-Wallet</span>
+                                    </div>
+                                </label>
+
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cod">
+                                    <div class="payment-card">
+                                        <span class="payment-icon">💵</span>
+                                        <span class="payment-text">Cash on Delivery</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="form-section">
+                            <h3>📝 Catatan (Opsional)</h3>
+
+                            <div class="form-group">
+                                <label for="notes">Catatan Pesanan</label>
+                                <textarea 
+                                    id="notes" 
+                                    name="notes"
+                                    rows="3"
+                                    placeholder="Contoh: Jangan pakai gula, tambah es batu ekstra..."
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-block btn-large">
+                            🎉 Konfirmasi Pesanan
+                        </button>
+
+                        <a href="cart.html" class="btn btn-secondary btn-block" style="margin-top: 10px;">
+                            ◀ Kembali ke Cart
+                        </a>
+                    </form>
+                </div>
+
+                <!-- ORDER SUMMARY -->
+                <aside class="checkout-sidebar">
+                    <div class="order-summary">
+                        <h3>📦 Ringkasan Pesanan</h3>
+
+                        <div class="order-items" id="orderItems">
+                            <!-- Order items will be loaded by JavaScript -->
+                            <div style="text-align: center; padding: 20px;">
+                                <p>Loading...</p>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">Rp 0</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Pajak (10%)</span>
+                            <span id="summaryTax">Rp 0</span>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Biaya Pengiriman</span>
+                            <span id="summaryShipping">Rp 10.000</span>
+                        </div>
+
+                        <hr>
+
+                        <div class="summary-total">
+                            <span>Total Pembayaran</span>
+                            <span id="summaryTotal">Rp 0</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PrassCofee</h3>
+                    <p>Menyajikan kopi berkualitas untuk hari yang lebih baik</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: prasetyaadhi398@gmail.com</p>
+                    <p>Phone: +62 852-3464-1311</p>
+                    <p>Location: Purbalingga, Central Java</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrassCofee. All rights reserved. | Portfolio Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>Pesanan Berhasil!</h2>
+            <p>Terima kasih telah memesan di <strong>PrassCofee</strong>.</p>
+            <p>Pesanan Anda sedang diproses.</p>
+            <p class="order-number">Order ID: <strong id="orderNumber">#ORD-12345</strong></p>
+            <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                ✅ Kembali ke Home
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Notification</span>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    
+    <!-- Checkout Logic -->
+    <script>
+        // Checkout functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🛒 Initializing checkout...');
+            
+            loadOrderSummary();
+            updateCartCount();
+            autofillUserData();
+
+            // Handle form submission
+            document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (!this.checkValidity()) {
+                    showToast('Mohon lengkapi semua field yang wajib diisi!', 'error');
+                    return;
+                }
+                
+                // Generate random order number
+                const orderNum = 'ORD-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+                document.getElementById('orderNumber').textContent = '#' + orderNum;
+                
+                // Show success modal
+                document.getElementById('successModal').style.display = 'flex';
+                
+                // Clear cart after successful order
+                localStorage.removeItem('cart');
+                updateCartCount();
+                
+                console.log('✅ Order placed:', orderNum);
+            });
+        });
+
+        // Load order summary from cart
+        function loadOrderSummary() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderItems = document.getElementById('orderItems');
+            
+            if (cart.length === 0) {
+                showToast('Keranjang kosong! Redirecting...', 'warning');
+                setTimeout(() => {
+                    window.location.href = 'cart.html';
+                }, 1500);
+                return;
+            }
+
+            // Display order items
+            orderItems.innerHTML = cart.map(item => `
+                <div class="order-item">
+                    <div class="order-item-info">
+                        <strong>${item.name}</strong>
+                        <span>x${item.quantity}</span>
+                    </div>
+                    <span class="order-item-price">Rp ${(item.price * item.quantity).toLocaleString('id-ID')}</span>
+                </div>
+            `).join('');
+
+            // Calculate totals
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const tax = subtotal * 0.1;
+            const shipping = 10000;
+            const total = subtotal + tax + shipping;
+
+            // Update summary
+            document.getElementById('summarySubtotal').textContent = 'Rp ' + subtotal.toLocaleString('id-ID');
+            document.getElementById('summaryTax').textContent = 'Rp ' + tax.toLocaleString('id-ID');
+            document.getElementById('summaryShipping').textContent = 'Rp ' + shipping.toLocaleString('id-ID');
+            document.getElementById('summaryTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
+            
+            console.log('✅ Order summary loaded');
+        }
+
+        // Auto-fill user data if logged in
+        function autofillUserData() {
+            if (typeof getCurrentUser === 'function') {
+                const user = getCurrentUser();
+                if (user) {
+                    document.getElementById('fullName').value = user.fullName || '';
+                    document.getElementById('email').value = user.email || '';
+                    console.log('✅ User data autofilled');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
