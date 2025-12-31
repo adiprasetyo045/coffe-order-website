@@ -225,8 +225,8 @@ MIT License - Feel free to use this project for your portfolio!
 ## 👤 Author
 
 **Your Name**
-- Portfolio: [yourportfolio.com]
-- GitHub: [@yourusername]
+- Portfolio: [https://adiprasetyo045.github.io/Website-Portofolio/]
+- GitHub: [https://github.com/adiprasetyo045]
 - LinkedIn: [Your LinkedIn]
 
 ## 🙏 Acknowledgments
@@ -239,7 +239,7 @@ MIT License - Feel free to use this project for your portfolio!
 
 ⭐ **Star this repository if you find it helpful!**
 
-📧 **Contact:** your.email@example.com
+📧 **Contact:** prasetyaadhi398@gmail.com
 
 ---
 
